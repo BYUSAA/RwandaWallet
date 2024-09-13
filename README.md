@@ -1,7 +1,8 @@
-"RwandaWallet: A Mobile Money Transfer System"
+_**RwandaWallet: A Mobile Money Transfer System**_
+
 This project is a Java Spring Boot application that provides a backend for a mobile money transfer system in Rwanda. The system uses PostgreSQL/MySQL as the database and Redis for caching.
 
-Table of Contents
+**Table of Contents**
 Getting Started
 Architecture
 Endpoints
@@ -15,7 +16,7 @@ License
 Getting Started
 These instructions will help you set up and run the application on your local machine.
 
-Prerequisites
+**Prerequisites**
 Java Development Kit (JDK) 8 or higher
 Apache Maven 3.6.0 or higher
 PostgreSQL/MySQL and Redis installed and running
@@ -34,7 +35,7 @@ GET /api/myProfile: Get the profile information of a specific customer.
 Database Schema
 The application uses a customers table to store customer information. The schema is as follows:
 
-sql
+**sql**
 
 Verify
 
@@ -48,10 +49,10 @@ Copy code
 5    pin INTEGER NOT NULL,
 6    balance DECIMAL(10, 2) NOT NULL DEFAULT 10000000.00
 7);
-Redis Configuration
+**Redis Configuration**
 The application uses Redis for caching. The following configuration properties should be set:
 
-properties
+**properties**
 
 Verify
 
@@ -70,17 +71,17 @@ SPRING_DATASOURCE_PASSWORD: The password for the PostgreSQL/MySQL database.
 Building and Running the Application
 To build and run the application, follow these steps:
 
-Clone the repository: git clone https://github.com/BYUSAA/RwandaWallet.git
+**Clone the repository:** git clone https://github.com/BYUSAA/RwandaWallet.git
 Run mvn clean install to build the application.
 Set the environment variables.
 Run java -jar target/rwandawallet-0.0.1-SNAPSHOT.jar to start the application.
 Testing
 To run the tests, execute mvn test in the project directory.
 
-Contributing
+**Contributing**
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-License
+**License**
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
-Note: You can customize this README file to fit your specific needs and project requirements.
+**Note:** You can customize this README file to fit your specific needs and project requirements.
