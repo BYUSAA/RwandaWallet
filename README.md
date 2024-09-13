@@ -1,4 +1,4 @@
-RwandaWallet: A Mobile Money Transfer System
+"RwandaWallet: A Mobile Money Transfer System"
 This project is a Java Spring Boot application that provides a backend for a mobile money transfer system in Rwanda. The system uses PostgreSQL/MySQL as the database and Redis for caching.
 
 Table of Contents
@@ -79,5 +79,8 @@ To run the tests, execute mvn test in the project directory.
 
 Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+License
+This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 Note: You can customize this README file to fit your specific needs and project requirements.
