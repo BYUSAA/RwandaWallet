@@ -27,12 +27,35 @@ public class Customer {
     }
 
     // Getters and Setters
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
-    public String getPin() { return pin; }
-    public void setPin(String pin) { this.pin = pin; }
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-    public double getBalance() { return balance; }
-    public void setBalance(double balance) { this.balance = balance; }
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
 }

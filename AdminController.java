@@ -10,6 +10,9 @@ public class AdminController {
     @Autowired
     private CustomerRepository customerRepository;
 
+    @Autowired
+    private MoneyTransferRepository transferRepository; // Added this missing repository
+
     @GetMapping("/all-balances")
     public List<Customer> getAllCustomersBalance() {
         return customerRepository.findAll();
