@@ -38,43 +38,24 @@ Project Structure
 scss
 
 ├── src
-
 │   ├── main
-
 │   │   ├── java
-
 │   │   │   └── com.example.rwandawallet
-
 │   │   │       ├── controller
-
 │   │   │       │   ├── AdminController.java
-
 │   │   │       │   ├── MoneyTransferController.java
-
 │   │   │       │   └── CustomerController.java (future)
-
 │   │   │       ├── model
-
 │   │   │       │   ├── Admin.java (future)
-
 │   │   │       │   ├── Customer.java
-
 │   │   │       │   └── MoneyTransfer.java
-
 │   │   │       └── repository
-
 │   │   │           ├── AdminRepository.java
-
 │   │   │           ├── CustomerRepository.java
-
 │   │   │           └── MoneyTransferRepository.java
-
 │   └── resources
-
 │       ├── application.properties
-
 ├── pom.xml
-
 └── README.md
 
 
