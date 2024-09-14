@@ -1,87 +1,114 @@
-_**RwandaWallet: A Mobile Money Transfer System**_
+RwandaWallet Application
+RwandaWallet is a money transfer system that allows users to register, log in, check their balance, view transaction history, and transfer money to other users. It includes an admin panel where administrators can view all customer balances and track transfer histories.
 
-This project is a Java Spring Boot application that provides a backend for a mobile money transfer system in Rwanda. The system uses PostgreSQL/MySQL as the database and Redis for caching.
+Features
+User Registration: Each user registers with their phone number and a PIN.
+User Authentication: Users log in using their phone number and PIN.
+Money Transfer: Users can transfer money to other registered users.
+Balance Check: Users can check their current balance.
+Transaction History: Users can view the history of their transfers.
+Admin Dashboard: Admins can view all user balances and transaction history.
+Technologies Used
+Frontend: HTML, CSS, JavaScript
+Backend: Java, Spring Boot
+Database: PostgreSQL
+Caching: Redis (planned for future implementation)
+Prerequisites
+Ensure you have the following installed:
 
-**Table of Contents**
-Getting Started
-Architecture
-Endpoints
-Database Schema
-Redis Configuration
-Environment Variables
-Building and Running the Application
-Testing
-Contributing
-License
-Getting Started
-These instructions will help you set up and run the application on your local machine.
-
-**Prerequisites**
-Java Development Kit (JDK) 8 or higher
-Apache Maven 3.6.0 or higher
-PostgreSQL/MySQL and Redis installed and running
-Architecture
-The application consists of the following components:
-
-Backend Development: Java and Spring Boot are used to create the RESTful API.
-Database Management: PostgreSQL/MySQL is used to store customer information, transactions, and other relevant data.
-Caching: Redis is used to cache data for faster access.
-Endpoints
-The application provides the following endpoints:
-
-POST /api/sendMoney: Send money from one customer to another.
-GET /api/myBalance: Get the balance of a specific customer.
-GET /api/myProfile: Get the profile information of a specific customer.
-Database Schema
-The application uses a customers table to store customer information. The schema is as follows:
-
-**sql**
-
-Verify
-
-Open In Editor
-Edit
+Java 17+
+Maven
+PostgreSQL
+IntelliJ IDEA or any preferred IDE
+Postman for testing API endpoints
+Project Structure
+scss
 Copy code
-1CREATE TABLE customers (
-2    id SERIAL PRIMARY KEY,
-3    phone_number VARCHAR(20) NOT NULL,
-4    name VARCHAR(50) NOT NULL,
-5    pin INTEGER NOT NULL,
-6    balance DECIMAL(10, 2) NOT NULL DEFAULT 10000000.00
-7);
-**Redis Configuration**
-The application uses Redis for caching. The following configuration properties should be set:
-
-**properties**
-
-Verify
-
-Open In Editor
-Edit
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   └── com.example.rwandawallet
+│   │   │       ├── controller
+│   │   │       │   ├── AdminController.java
+│   │   │       │   ├── MoneyTransferController.java
+│   │   │       │   └── CustomerController.java (future)
+│   │   │       ├── model
+│   │   │       │   ├── Admin.java (future)
+│   │   │       │   ├── Customer.java
+│   │   │       │   └── MoneyTransfer.java
+│   │   │       └── repository
+│   │   │           ├── AdminRepository.java
+│   │   │           ├── CustomerRepository.java
+│   │   │           └── MoneyTransferRepository.java
+│   └── resources
+│       ├── application.properties
+├── pom.xml
+└── README.md
+Database Setup
+Install PostgreSQL and create a database named byussa.
+Create the required tables by running the SQL script in PostgreSQL.sql:
+sql
 Copy code
-1spring.redis.host=localhost
-2spring.redis.port=6379
-3spring.redis.password=your_password
-Environment Variables
-The following environment variables should be set:
+CREATE DATABASE byussa;
 
-SPRING_DATASOURCE_URL: The URL for the PostgreSQL/MySQL database.
-SPRING_DATASOURCE_USERNAME: The username for the PostgreSQL/MySQL database.
-SPRING_DATASOURCE_PASSWORD: The password for the PostgreSQL/MySQL database.
-Building and Running the Application
-To build and run the application, follow these steps:
+-- Run the rest of the SQL commands in PostgreSQL.sql
+Update your application.properties with your PostgreSQL credentials:
+properties
+Copy code
+spring.datasource.url=jdbc:postgresql://localhost:5432/byussa
+spring.datasource.username=your_postgres_username
+spring.datasource.password=your_postgres_password
+Running the Application
+Clone the repository:
 
-**Clone the repository:** git clone https://github.com/BYUSAA/RwandaWallet.git
-Run mvn clean install to build the application.
-Set the environment variables.
-Run java -jar target/rwandawallet-0.0.1-SNAPSHOT.jar to start the application.
-Testing
-To run the tests, execute mvn test in the project directory.
+bash
+Copy code
+git clone https://github.com/your-username/rwandawallet.git
+Navigate to the project directory:
 
-**Contributing**
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+bash
+Copy code
+cd rwandawallet
+Build the application using Maven:
 
-**License**
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+bash
+Copy code
+mvn clean install
+Run the Spring Boot application:
 
-**Note:** You can customize this README file to fit your specific needs and project requirements.
+bash
+Copy code
+mvn spring-boot:run
+API Endpoints
+User Endpoints
+Send Money:
+
+bash
+Copy code
+POST /api/transfer/send
+Request Parameters:
+
+fromPhoneNumber
+toPhoneNumber
+amount
+pin
+Check Balance: (Future)
+
+bash
+Copy code
+GET /api/customer/balance
+Admin Endpoints
+View All Customer Balances:
+
+bash
+Copy code
+GET /api/admin/all-balances
+View All Money Transfers:
+
+bash
+Copy code
+GET /api/admin/history
+Future Enhancements
+Add user authentication for the API.
+Integrate Redis caching for faster balance retrievals.
+Implement a frontend interface for users to interact with the application.
