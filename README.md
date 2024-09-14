@@ -86,7 +86,6 @@ Create the required tables by running the SQL script in PostgreSQL.sql
 SQL
 
 CREATE DATABASE byussa;
-
 -- Run the rest of the SQL commands in PostgreSQL.sql
 
 Update your application.properties with your PostgreSQL credentials:
@@ -103,8 +102,6 @@ _Clone the repository:_
 bash
 
 git clone https://github.com/BYUSAA/RwandaWallet.git
-
-
 Navigate to the project directory:
 
 bash
@@ -117,8 +114,6 @@ Build the application using Maven:
 bash
 
 mvn clean install
-
-
 Run the Spring Boot application:
 
 bash
@@ -154,8 +149,6 @@ View All Customer Balances:
 bash
 
 GET /API/admin/all-balances
-
-
 View All Money Transfers:
 
 bash
