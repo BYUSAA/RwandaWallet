@@ -63,7 +63,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/rwandawallet.git
+git clone https://github.com/BYUSAA/RwandaWallet.git
 Navigate to the project directory:
 
 bash
