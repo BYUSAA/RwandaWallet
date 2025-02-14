@@ -4,4 +4,4 @@ A wallet is a money transfer system that allows users to register, log in, check
 
 Add user authentication for the API.
 Integrate Redis caching for faster balance retrievals.
-Implement a frontend interface for users to interact with the application.
+
